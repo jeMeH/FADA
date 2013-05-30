@@ -150,20 +150,26 @@ public class Set {
         return c;
     }
 
-    public static String showSet(int a[]) {
+    public static String showSet(boolean a[]) {
         String str = "[";
-        for (int i = 0; i < a.length - 1; i++) {
-            str += a[i] + ", ";
+        int n = 0;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == true) {
+                str += n + ", ";
+            }
+            n++;
         }
-        return str + a[a.length - 1] + "]";
+        str += "]";
+        str = str.replaceAll(", ]", "]");
+        return str;
     }
 
     public static String showSet(long a[]) {
         String str = "[";
         int n = 0;
         for (int z = 0; z < a.length; z++) {
-            for (int i = 0; i < 64; i++) {
-                if ((a[z] & (long) 1 << i) != 0) {
+            for (int i = 0; i < 63; i++) {
+                if (((long) a[z] & (long) 1 << i) != 0) {
                     str += n + ", ";
                 }
                 n++;
