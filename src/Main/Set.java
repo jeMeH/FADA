@@ -136,14 +136,14 @@ public class Set {
     }
 
     public static LinkedList<Integer> diference(LinkedList<Integer> a, LinkedList<Integer> b) {
-        b.removeAll(a);
-        return b;
+        a.removeAll(b);
+        return a;
     }
 
     public static boolean[] diference(boolean[] a, boolean[] b) {
         boolean[] c = new boolean[a.length];
         for (int i = 0; i < a.length; i++) {
-            c[i] = (a[i] ^ b[i]);
+            c[i] = (a[i] & !(b[i]));
         }
         return c;
     }
@@ -151,7 +151,7 @@ public class Set {
     public static long[] diference(long[] a, long[] b) {
         long[] c = new long[a.length];
         for (int i = 0; i < a.length; i++) {
-            c[i] = (a[i] ^ b[i]);
+            c[i] = (a[i] & ~b[i]);
         }
         return c;
     }
@@ -174,15 +174,15 @@ public class Set {
         String str = "[";
         int n = 0;
         for (int z = 0; z < a.length; z++) {
-            for (int i = 0; i < 63; i++) {
+            for (int i = 0; i < 64; i++) {
                 if (((long) a[z] & (long) 1 << i) != 0) {
                     str += n + ", ";
                 }
                 n++;
             }
         }
-//        str += "]";
-//        str = str.replaceAll(", ]", "]");
+        str += "]";
+        str = str.replaceAll(", ]", "]");
         return str;
     }
 }

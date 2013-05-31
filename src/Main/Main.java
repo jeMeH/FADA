@@ -66,18 +66,19 @@ public class Main {
 
 
         long a3[] = {Long.MAX_VALUE, 0, 0, 0};
-        long b3[] = {0, Long.MAX_VALUE, 0, 0};
+        long b3[] = {Long.MAX_VALUE,0, 0, 0};
 //        System.out.println(Set.isEqual(a3, b3));
 //        System.out.println(Set.isEmpty(a2));
 //        System.out.println(Set.isSubSet(a2, b2));
         
         
-        System.out.println(Set.showSet(a3));
-        System.out.println(Set.showSet(a2));
-        System.out.println(a.toString());
-        System.out.println(Set.showSet(b3));
-        System.out.println(Set.showSet(b2));
-        System.out.println(b.toString());
+//        System.out.println(Set.showSet(a3));
+//        System.out.println(Set.showSet(a2));
+//        System.out.println(a.toString());
+//        System.out.println(Set.showSet(b3));
+//        System.out.println(Set.showSet(b2));
+        System.out.println(a3[0] == b3[0]);
+        System.out.println(a3[0] & b3[0]);
 
     }
 }
