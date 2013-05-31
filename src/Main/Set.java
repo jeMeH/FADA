@@ -181,8 +181,8 @@ public class Set {
                 n++;
             }
         }
-        str += "]";
-        str = str.replaceAll(", ]", "]");
+//        str += "]";
+//        str = str.replaceAll(", ]", "]");
         return str;
     }
 }
