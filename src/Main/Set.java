@@ -57,6 +57,9 @@ public class Set {
     }
 
     public static boolean isSubSet(boolean[] a, boolean[] b) {
+        if(isEmpty(b)){
+            return true;
+        }
         for (int i = 0; i < a.length; i++) {
             if (!(a[i] & b[i])) {
                 return false;
@@ -66,6 +69,9 @@ public class Set {
     }
 
     public static boolean isSubSet(long[] a, long[] b) {
+        if(isEmpty(b)){
+            return true;
+        }
         for (int i = 0; i < a.length; i++) {
             if ((a[i] & b[i]) != b[i]) {
                 return false;
