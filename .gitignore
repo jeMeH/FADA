@@ -1,2 +1,11 @@
+<<<<<<< HEAD
 /nbproject/private/
 /build/
+=======
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+>>>>>>> master
