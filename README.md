@@ -1,6 +1,5 @@
 FADA
 ====
-<<<<<<< HEAD
-proyecto de fundamentos y analisis de algoritmos con implementacion de conjuntos
-=======
->>>>>>> master
+Proyecto de: Fundamentos y analisis de algoritmos con implementacion de conjuntos
+====
+

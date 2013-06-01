@@ -1,5 +1,6 @@
 package Main;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 
 /*
@@ -17,22 +18,30 @@ public class Set {
         return a.containsAll(b) & b.containsAll(a);
     }
 
-    public static boolean isEqual(boolean[] a, boolean[] b) {
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] != b[i]) {
-                return false;
-            }
-        }
-        return true;
+//    public static boolean isEqual(boolean[] a, boolean[] b) {
+//        for (int i = 0; i < a.length; i++) {
+//            if (a[i] != b[i]) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+    
+     public static boolean isEqual(boolean[] a, boolean[] b) {
+        return Arrays.equals(a, b);
     }
 
-    public static boolean isEqual(long[] a, long[] b) {
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] != b[i]) {
-                return false;
-            }
-        }
-        return true;
+//    public static boolean isEqual(long[] a, long[] b) {
+//        for (int i = 0; i < a.length; i++) {
+//            if (a[i] != b[i]) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+     
+      public static boolean isEqual(long[] a, long[] b) {
+        return Arrays.equals(a, b);
     }
 
     public static boolean isEmpty(LinkedList<Integer> a) {
