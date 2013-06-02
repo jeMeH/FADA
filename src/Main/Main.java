@@ -16,69 +16,155 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int n = 125;
-//        int n =Integer.parseInt(args[0]);
+
+        int n = 1000000;
+//        int o = Integer.parseInt(args[1]);
+//            int n = 125;
+        long t0 = 0;
+        long t1 = 0;
+
         LinkedList<Integer> a = new LinkedList<>();
         LinkedList<Integer> b = new LinkedList<>();
-        for (int i = 0; i < 63; i++) {
+
+        boolean a2[] = new boolean[n];
+        boolean b2[] = new boolean[n];
+
+
+        long a3[] = new long[n];
+        long b3[] = new long[n];
+
+
+        for (int i = 0; i < 64; i++) {
             a.add(i);
-            b.add(i + 63);
+            b.add(i);
         }
-//        a.add(2);
-//        a.add(3);
-//        a.add(4);
-//        a.add(5);
-//
-//        b.add(6);
-//        b.add(7);
-//        b.add(8);
-//        b.add(9);
-//        b.add(10);
 
-
-//        System.out.println(Set.isEqual(a, b));
-//        System.out.println(Set.isEmpty(a));
-//        System.out.println(Set.isSubSet(a, b));
-//        System.out.println(Set.isDisjunct(a, b));
-//        System.out.println(Set.intersect(a, b).toString());
-//        System.out.println(Set.junction(a, b).toString());
-//        System.out.println(Set.diference(a, b));
-
-
-        boolean a2[] = new boolean[126];
-        boolean b2[] = new boolean[126];
-        for (int i = 0; i < 126; i++) {
+        for (int z = 0; z < n / 64; z++) {
+            for (int i = 0; i < 64; i++) {
+                a3[z] = a3[i] | 1 << i;
+                b3[z] = a3[i] | 1 << i;
+            }
+        }
+        for (int i = 0; i < n; i++) {
             a2[i] = false;
             b2[i] = false;
         }
-        for (int i = 0; i < 63; i++) {
+        for (int i = 0; i < n; i++) {
             a2[i] = true;
-            b2[i + 63] = true;
+            b2[i] = true;
         }
 
-//        System.out.println(Set.isEqual(a2, b2));
-//        System.out.println(Set.isEmpty(a2));
-//        System.out.println(Set.isSubSet(a2, b2));
-//        System.out.println(Set.isDisjunct(a2, b2));
-//        System.out.println(Set.showSet(Set.intersect(a2, b2)));
-//        System.out.println(Set.showSet(Set.junction(a2, b2)));
-//        System.out.println(Set.diference(a2, b2));
+        //linkedList
+        t0 = System.nanoTime();
+        Set.isEqual(a, b);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        t0 = System.nanoTime();
+        Set.isEmpty(a);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
 
 
-        long a3[] = {Long.MAX_VALUE, 0, 0, 0};
-        long b3[] = {Long.MAX_VALUE,0, 0, 0};
-//        System.out.println(Set.isEqual(a3, b3));
-//        System.out.println(Set.isEmpty(a2));
-//        System.out.println(Set.isSubSet(a2, b2));
-        
-        
-//        System.out.println(Set.showSet(a3));
-//        System.out.println(Set.showSet(a2));
-//        System.out.println(a.toString());
-//        System.out.println(Set.showSet(b3));
-//        System.out.println(Set.showSet(b2));
-        System.out.println(a3[0] == b3[0]);
-        System.out.println(a3[0] & b3[0]);
+        t0 = System.nanoTime();
+        Set.isSubSet(a, b);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
 
+        t0 = System.nanoTime();
+        Set.isDisjunct(a, b);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        t0 = System.nanoTime();
+        Set.intersect(a, b);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        t0 = System.nanoTime();
+        Set.diference(a, b);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        t0 = System.nanoTime();
+        Set.junction(a, b);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        //boolean
+        t0 = System.nanoTime();
+        Set.isEqual(a2, b2);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        t0 = System.nanoTime();
+        Set.isEmpty(a2);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+
+        t0 = System.nanoTime();
+        Set.isSubSet(a2, b2);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        t0 = System.nanoTime();
+        Set.isDisjunct(a2, b2);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        t0 = System.nanoTime();
+        Set.intersect(a2, b2);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        t0 = System.nanoTime();
+        Set.diference(a2, b2);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        t0 = System.nanoTime();
+        Set.junction(a2, b2);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        //binario
+        t0 = System.nanoTime();
+        Set.isEqual(a3, b3);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        t0 = System.nanoTime();
+        Set.isEmpty(a3);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+
+        t0 = System.nanoTime();
+        Set.isSubSet(a3, b3);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        t0 = System.nanoTime();
+        Set.isDisjunct(a3, b3);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        t0 = System.nanoTime();
+        Set.intersect(a3, b3);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        t0 = System.nanoTime();
+        Set.diference(a3, b3);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+        t0 = System.nanoTime();
+        Set.junction(a3, b3);
+        t1 = System.nanoTime();
+        System.out.println(n + " " + (t1 - t0));
+
+//        }
     }
 }
