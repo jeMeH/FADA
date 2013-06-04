@@ -17,8 +17,8 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        int n = 1000000;
-//        int o = Integer.parseInt(args[1]);
+//        int n = 100;
+        int n = Integer.parseInt(args[0]);
 //            int n = 125;
         long t0 = 0;
         long t1 = 0;
@@ -53,118 +53,119 @@ public class Main {
             a2[i] = true;
             b2[i] = true;
         }
-
+        String msj = "";
         //linkedList
-        t0 = System.nanoTime();
-        Set.isEqual(a, b);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
-        t0 = System.nanoTime();
-        Set.isEmpty(a);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
-
-        t0 = System.nanoTime();
-        Set.isSubSet(a, b);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
-        t0 = System.nanoTime();
-        Set.isDisjunct(a, b);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
-        t0 = System.nanoTime();
-        Set.intersect(a, b);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
-        t0 = System.nanoTime();
-        Set.diference(a, b);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
-        t0 = System.nanoTime();
-        Set.junction(a, b);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
+//        t0 = System.nanoTime();
+//        Set.isEqual(a, b);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+//
+//        t0 = System.nanoTime();
+//        Set.isEmpty(a);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+//
+//
+//        t0 = System.nanoTime();
+//        Set.isSubSet(a, b);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+//
+//        t0 = System.nanoTime();
+//        Set.isDisjunct(a, b);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+//
+//        t0 = System.nanoTime();
+//        Set.intersect(a, b);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+//
+//        t0 = System.nanoTime();
+//        Set.diference(a, b);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+//
+//        t0 = System.nanoTime();
+//        Set.junction(a, b);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
 
         //boolean
-        t0 = System.nanoTime();
-        Set.isEqual(a2, b2);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
+//        t0 = System.nanoTime();
+//        Set.isEqual(a2, b2);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
 
-        t0 = System.nanoTime();
-        Set.isEmpty(a2);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
-
-        t0 = System.nanoTime();
-        Set.isSubSet(a2, b2);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
-        t0 = System.nanoTime();
-        Set.isDisjunct(a2, b2);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
-        t0 = System.nanoTime();
-        Set.intersect(a2, b2);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
-        t0 = System.nanoTime();
-        Set.diference(a2, b2);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
+//        t0 = System.nanoTime();
+//        Set.isEmpty(a2);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+//
+//
+//        t0 = System.nanoTime();
+//        Set.isSubSet(a2, b2);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+//
+//        t0 = System.nanoTime();
+//        Set.isDisjunct(a2, b2);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+//
+//        t0 = System.nanoTime();
+//        Set.intersect(a2, b2);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+//
+//        t0 = System.nanoTime();
+//        Set.diference(a2, b2);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+//
         t0 = System.nanoTime();
         Set.junction(a2, b2);
         t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
+        msj += t1 - t0 + " ";
 
         //binario
-        t0 = System.nanoTime();
-        Set.isEqual(a3, b3);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
+//        t0 = System.nanoTime();
+//        Set.isEqual(a3, b3);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
 
-        t0 = System.nanoTime();
-        Set.isEmpty(a3);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
-
-        t0 = System.nanoTime();
-        Set.isSubSet(a3, b3);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
-        t0 = System.nanoTime();
-        Set.isDisjunct(a3, b3);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
-        t0 = System.nanoTime();
-        Set.intersect(a3, b3);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
-        t0 = System.nanoTime();
-        Set.diference(a3, b3);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
-
-        t0 = System.nanoTime();
-        Set.junction(a3, b3);
-        t1 = System.nanoTime();
-        System.out.println(n + " " + (t1 - t0));
+//        t0 = System.nanoTime();
+//        Set.isEmpty(a3);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+//
+//
+//        t0 = System.nanoTime();
+//        Set.isSubSet(a3, b3);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+//
+//        t0 = System.nanoTime();
+//        Set.isDisjunct(a3, b3);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+////
+//        t0 = System.nanoTime();
+//        Set.intersect(a3, b3);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+//
+//        t0 = System.nanoTime();
+//        Set.diference(a3, b3);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
+//
+//        t0 = System.nanoTime();
+//        Set.junction(a3, b3);
+//        t1 = System.nanoTime();
+//        msj += t1 - t0 + " ";
 
 //        }
+        System.out.print(msj + "\n");
     }
 }

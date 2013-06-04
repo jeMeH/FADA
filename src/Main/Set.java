@@ -49,16 +49,21 @@ public class Set {
     }
 
     public static boolean isEmpty(boolean[] a) {
-        return a.length == 0;
+       for (int i = 0; i < a.length; i++) {
+            if (a[i] & true) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static boolean isEmpty(long[] a) {
         for (int i = 0; i < a.length; i++) {
-            if (a[i] == 0) {
-                return true;
+            if (a[i] != 0) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     public static boolean isSubSet(LinkedList<Integer> a, LinkedList<Integer> b) {
